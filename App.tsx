@@ -58,13 +58,12 @@ const App: React.FC = () => {
     if (!posterRef.current) return;
     setIsDownloading(true);
     try {
-      // Small delay to ensure all images (like the cover) are fully rendered in the DOM
       await new Promise(resolve => setTimeout(resolve, 500));
       
       const dataUrl = await toPng(posterRef.current, {
         cacheBust: true,
         quality: 1,
-        pixelRatio: 2, // Higher resolution for mobile reading
+        pixelRatio: 2,
       });
       
       const link = document.createElement('a');
@@ -93,9 +92,11 @@ const App: React.FC = () => {
                     实时监控：量子位、虎嗅、晚点、差评等顶级公众号源
                   </p>
                 </div>
-                <div className="flex items-center px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-xl text-xs font-bold text-emerald-600">
-                  <Sparkles className="w-3 h-3 mr-2" />
-                  今日热点模式
+                <div className="flex items-center space-x-3">
+                  <div className="flex items-center px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-xl text-xs font-bold text-emerald-600">
+                    <Sparkles className="w-3 h-3 mr-2" />
+                    今日热点模式
+                  </div>
                 </div>
               </div>
               
@@ -114,7 +115,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 pipeline-controls">
             <div className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm sticky top-28">
               <div className="flex items-center space-x-2 mb-6">
                 <h2 className="text-xl font-bold text-slate-800 uppercase tracking-tighter">自动化流程</h2>
