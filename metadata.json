@@ -1,0 +1,5 @@
+{
+  "name": "WeChat News Automation Dashboard",
+  "description": "A comprehensive dashboard for managing a WeChat news pipeline: from source tracking and AI-driven summarization to cover image generation and mobile long-image rendering.",
+  "requestFramePermissions": []
+}
